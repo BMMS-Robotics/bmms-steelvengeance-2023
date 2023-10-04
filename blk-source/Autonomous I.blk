@@ -1,7 +1,107 @@
 <xml xmlns="https://developers.google.com/blockly/xml">
 <variables>
-<variable id=";P1~5;iI*%k7_}2fa1UZ">MotorPower1</variable>
+<variable id="(!#lY@5abRqeBSchB54[">MotorPower</variable>
+<variable id="H|]hJ4LT!MARLK@?t7cu">MotorPower2</variable>
 </variables>
+<block type="procedures_defnoreturn" id="={O3qqJh,oSzMkF4n.}[" x="448" y="-18">
+<mutation>
+<arg name="MotorPower" varid="(!#lY@5abRqeBSchB54["/>
+<arg name="MotorPower2" varid="H|]hJ4LT!MARLK@?t7cu"/>
+</mutation>
+<field name="NAME">do something</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="dcMotor_setProperty_Number" id="Uo{5QtUj^D^3Q*tWXW/a">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor1"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="-b}@4)qO+?*K11qTgj]O">
+<field name="VAR" id="(!#lY@5abRqeBSchB54[">MotorPower</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="umtZcc7iKME@@NEkmyHt">
+<field name="IDENTIFIER">motor2AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor2"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="?I]u!+#U+G1v)~l)~bhU">
+<field name="VAR" id="(!#lY@5abRqeBSchB54[">MotorPower</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="d^1IB{r%HQxJb[BnOS|2">
+<field name="IDENTIFIER">motor3AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor3"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id=",/z1dgAL:OP`sRQe{BoB">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="glTR^XEB7vJB3Zc}.7v^">
+<field name="VAR" id="H|]hJ4LT!MARLK@?t7cu">MotorPower2</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="bs!Dc[BeS/t(+s^3|aI#">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="bd_7n/De-!g6}D(]prME">
+<field name="IDENTIFIER">motor4AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor4"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="BEF:Jw[K6sii;@r}0/zA">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="kukRD0w@L}J8%9Z`;~^=">
+<field name="VAR" id="H|]hJ4LT!MARLK@?t7cu">MotorPower2</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="X)u73TBA5$yKOG/8-8LP">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="comment" id="4[.@6[PXCH@V*bYoy5S.">
+<field name="COMMENT">Put loop blocks here.</field>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
 <block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="50" y="50">
 <field name="NAME">runOpMode</field>
 <comment pinned="false" h="45" w="532">This function is executed when this OpMode is selected from the Driver Station.</comment>
@@ -25,24 +125,64 @@
 <block type="linearOpMode_opModeIsActive" id="e)cr{!2VIET83s,JWC.="/>
 </value>
 <statement name="DO">
+<block type="controls_whileUntil" id="uA.2AZC|jTr:UIh7s!U-">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="logic_compare" id="=CsMm~3EeU*6]=NM0kmw">
+<field name="OP">LT</field>
+<value name="A">
+<block type="dcMotor_getProperty_Number" id="b7}4fS^sgkI#Y)+o*p^a">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"motor1"}</data>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="_xXqbM%;rDPzb=bri6TJ">
+<field name="NUM">4320</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO">
+<block type="procedures_callnoreturn" id="HK(dPsB5H5tjxFLKB+:(">
+<mutation name="do something">
+<arg name="MotorPower"/>
+<arg name="MotorPower2"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="S=X[K2{ILKP`J{QEkZ-5">
+<field name="NUM">1</field>
+</block>
+</value>
+<value name="ARG1">
+<block type="math_number" id="q6y1[@zVC=4M!R`2Y2=8">
+<field name="NUM">-1</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="procedures_callnoreturn" id="t38fa|X`K[mCB~|iEI`Z">
+<mutation name="do something">
+<arg name="MotorPower"/>
+<arg name="MotorPower2"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="E{S:sC]x^-Kmmh.mI,p9">
+<field name="NUM">0</field>
+</block>
+</value>
+<value name="ARG1">
+<block type="math_number" id="iNKTA`XxGP{hubGU0AaF">
+<field name="NUM">0</field>
+</block>
+</value>
+<next>
 <block type="comment" id="Jh/;L$n@JuX8AQJDFCul">
 <field name="COMMENT">Put loop blocks here.</field>
 <next>
-<block type="dcMotor_setProperty_Number" id="*;unWPRHrS@k^OEy-{@H">
-<field name="IDENTIFIER">motor1AsDcMotor</field>
-<field name="PROP">Power</field>
-<data>{"IDENTIFIER":"motor1"}</data>
-<value name="VALUE">
-<shadow type="math_number" id="Di84^O9%N[Y=PPycz:NW">
-<field name="NUM">1</field>
-</shadow>
-</value>
-<next>
-<block type="telemetry_update" id="exvivmft-pX$n!1,8Ea$">
-<next>
-<block type="variables_set" id="nO@3fG`AwIG(+=mt$WaA">
-<field name="VAR" id=";P1~5;iI*%k7_}2fa1UZ">MotorPower1</field>
-</block>
+<block type="telemetry_update" id="exvivmft-pX$n!1,8Ea$"/>
 </next>
 </block>
 </next>
@@ -60,23 +200,10 @@
 </next>
 </block>
 </statement>
-</block>
-<block type="dcMotor_setProperty_Number" id="xiIfB~3Zv?-e#NmX)g?z" x="429" y="294">
-<field name="IDENTIFIER">motor1AsDcMotor</field>
-<field name="PROP">Power</field>
-<data>{"IDENTIFIER":"motor1"}</data>
-<value name="VALUE">
-<shadow type="math_number" id="GGM}KjlQ_pC`_M[XZ7Kj">
-<field name="NUM">1</field>
-</shadow>
-</value>
-</block>
-<block type="variables_get" id="R$en7YERZ0=`}T]_/WRX" x="412" y="360">
-<field name="VAR" id=";P1~5;iI*%k7_}2fa1UZ">MotorPower1</field>
 </block>
 </xml>
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <Extra>
-<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<OpModeMeta flavor="AUTONOMOUS" group="" autoTransition="" />
 <Enabled value="true" />
 </Extra>
