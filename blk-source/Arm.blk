@@ -2,7 +2,6 @@
 <variables>
 <variable id="(!#lY@5abRqeBSchB54[">MotorPower</variable>
 <variable id="H|]hJ4LT!MARLK@?t7cu">MotorPower2</variable>
-<variable id="rd#teJkiQkt9=prH=l_t">max rotation</variable>
 </variables>
 <block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="110" y="77">
 <field name="NAME">runOpMode</field>
@@ -13,16 +12,6 @@
 <next>
 <block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
 <next>
-<block type="dcMotor_setProperty_RunMode" id="VZXeE6PW=?_zBS,(1`b*">
-<field name="IDENTIFIER">motor4AsDcMotor</field>
-<field name="PROP">Mode</field>
-<data>{"IDENTIFIER":"motor4"}</data>
-<value name="VALUE">
-<shadow type="dcMotor_typedEnum_runMode" id="/g/^-BreFo,8mYs$b(!N">
-<field name="RUN_MODE">RUN_USING_ENCODER</field>
-</shadow>
-</value>
-<next>
 <block type="dcMotor_setProperty_RunMode" id="au0$|s}Lz[V4e4[FOG,K">
 <field name="IDENTIFIER">motor4AsDcMotor</field>
 <field name="PROP">Mode</field>
@@ -30,16 +19,6 @@
 <value name="VALUE">
 <shadow type="dcMotor_typedEnum_runMode" id="JNUP|*rXfJTZ]0x[I`pI">
 <field name="RUN_MODE">RUN_TO_POSITION</field>
-</shadow>
-</value>
-<next>
-<block type="dcMotor_setProperty_Number" id="8)eQ4Y)qa:YcJz{Q=ofu">
-<field name="IDENTIFIER">motor4AsDcMotor</field>
-<field name="PROP">TargetPosition</field>
-<data>{"IDENTIFIER":"motor4"}</data>
-<value name="VALUE">
-<shadow type="math_number" id="3`mjPcd}BcBG1.AND=lJ">
-<field name="NUM">720</field>
 </shadow>
 </value>
 <next>
@@ -71,6 +50,18 @@
 <field name="NUM">0.5</field>
 </shadow>
 </value>
+<next>
+<block type="dcMotor_setProperty_Number" id="8)eQ4Y)qa:YcJz{Q=ofu">
+<field name="IDENTIFIER">motor4AsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"motor4"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="3`mjPcd}BcBG1.AND=lJ">
+<field name="NUM">1440</field>
+</shadow>
+</value>
+</block>
+</next>
 </block>
 </statement>
 <value name="IF1">
@@ -90,6 +81,18 @@
 <field name="NUM">-0.5</field>
 </shadow>
 </value>
+<next>
+<block type="dcMotor_setProperty_Number" id="CIm2bXmbd=M[8S+W1w6r">
+<field name="IDENTIFIER">motor4AsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"motor4"}</data>
+<value name="VALUE">
+<shadow type="math_number" id=",FGeyd}(rzM@6/E)GzoL">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</next>
 </block>
 </statement>
 <statement name="ELSE">
@@ -104,6 +107,9 @@
 </value>
 </block>
 </statement>
+<next>
+<block type="comment" id="|FYoInQHv{5K6++M8md[">
+<field name="COMMENT">claw servo</field>
 <next>
 <block type="controls_if" id="lq7`W^!R4$o+jgI/)7:W">
 <mutation elseif="1"/>
@@ -170,55 +176,6 @@
 </block>
 </statement>
 <next>
-<block type="controls_whileUntil" id="sQ9S:/:,IBR|yP-1-^ah">
-<field name="MODE">WHILE</field>
-<value name="BOOL">
-<block type="logic_compare" id="K=l{r#z?fqr|{JV2;-*9">
-<field name="OP">EQ</field>
-<value name="A">
-<block type="variables_get" id="4f)M4Yv[r5-6{YHCi{v9">
-<field name="VAR" id="rd#teJkiQkt9=prH=l_t">max rotation</field>
-</block>
-</value>
-<value name="B">
-<block type="logic_boolean" id="gp$2~xC3E;D*TdI{;`OX">
-<field name="BOOL">FALSE</field>
-</block>
-</value>
-</block>
-</value>
-<statement name="DO">
-<block type="controls_if" id="I=iQlueKW9C?XxXh.Fy*">
-<value name="IF0">
-<block type="logic_compare" id="iTXP%c)VK:D57~O_|-S7">
-<field name="OP">EQ</field>
-<value name="A">
-<block type="variables_get" id="pg(===#Y1/]xLm=z]kwt">
-<field name="VAR" id="rd#teJkiQkt9=prH=l_t">max rotation</field>
-</block>
-</value>
-<value name="B">
-<block type="logic_boolean" id="eLTb,o7WdexKc=^vN)$f">
-<field name="BOOL">TRUE</field>
-</block>
-</value>
-</block>
-</value>
-<statement name="DO0">
-<block type="dcMotor_setProperty_Number" id="O;/K!!l#Xf#;-92A#}VE">
-<field name="IDENTIFIER">motor1AsDcMotor</field>
-<field name="PROP">Power</field>
-<data>{"IDENTIFIER":"motor1"}</data>
-<value name="VALUE">
-<shadow type="math_number" id="`_(^5=X+!*l6S6RPFiqu">
-<field name="NUM">0</field>
-</shadow>
-</value>
-</block>
-</statement>
-</block>
-</statement>
-<next>
 <block type="comment" id="ZyEU}uk2$4-[P(D=sG_v">
 <field name="COMMENT">Put loop blocks here.</field>
 <next>
@@ -240,10 +197,6 @@
 </next>
 </block>
 </statement>
-</block>
-</next>
-</block>
-</next>
 </block>
 </next>
 </block>

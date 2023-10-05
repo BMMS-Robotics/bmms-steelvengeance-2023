@@ -127,7 +127,22 @@
 <statement name="DO">
 <block type="controls_whileUntil" id="uA.2AZC|jTr:UIh7s!U-">
 <field name="MODE">WHILE</field>
-<value name="BOOL">
+</block>
+</statement>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="controls_if" id="f;N`W43lB$paq/P{R|2N" x="397" y="378">
+<mutation elseif="2" else="1"/>
+<value name="IF0">
 <block type="logic_compare" id="=CsMm~3EeU*6]=NM0kmw">
 <field name="OP">LT</field>
 <value name="A">
@@ -144,7 +159,7 @@
 </value>
 </block>
 </value>
-<statement name="DO">
+<statement name="DO0">
 <block type="procedures_callnoreturn" id="HK(dPsB5H5tjxFLKB+:(">
 <mutation name="do something">
 <arg name="MotorPower"/>
@@ -160,9 +175,35 @@
 <field name="NUM">-1</field>
 </block>
 </value>
+<next>
+<block type="linearOpMode_sleep_Number" id="/Qv$9D!5Pn@^.3_(0A(_">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="H7`wwm:5@wD`OZ%Ta2ok">
+<field name="NUM">20</field>
+</shadow>
+</value>
+</block>
+</next>
 </block>
 </statement>
-<next>
+<value name="IF1">
+<block type="logic_compare" id="Q{bg!#a=%3@!wC[V%qdD">
+<field name="OP">LT</field>
+<value name="A">
+<block type="dcMotor_getProperty_Number" id="Zcr!A]-hX``o42F~cdXG">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"motor1"}</data>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="$5%DFcu2q.6NAB/}(4qW">
+<field name="NUM">4590</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO1">
 <block type="procedures_callnoreturn" id="t38fa|X`K[mCB~|iEI`Z">
 <mutation name="do something">
 <arg name="MotorPower"/>
@@ -170,36 +211,141 @@
 </mutation>
 <value name="ARG0">
 <block type="math_number" id="E{S:sC]x^-Kmmh.mI,p9">
-<field name="NUM">0</field>
+<field name="NUM">1</field>
 </block>
 </value>
 <value name="ARG1">
 <block type="math_number" id="iNKTA`XxGP{hubGU0AaF">
-<field name="NUM">0</field>
+<field name="NUM">1</field>
 </block>
 </value>
 <next>
-<block type="comment" id="Jh/;L$n@JuX8AQJDFCul">
+<block type="linearOpMode_sleep_Number" id="$snPhl=(tz?_VNcKmI*r">
+<value name="MILLISECONDS">
+<shadow type="math_number" id=".@=A$SVs,r.m}?APlV.c">
+<field name="NUM">50</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</statement>
+<value name="IF2">
+<block type="logic_compare" id="S;#lQ|H#6*PJ$yV!F]k=">
+<field name="OP">LT</field>
+<value name="A">
+<block type="dcMotor_getProperty_Number" id="040R+deUF_d{c8WX9x|O">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"motor1"}</data>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="Dh5l*}rRbb,O?^D62+Zg">
+<field name="NUM">7000</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO2">
+<block type="procedures_callnoreturn" id="C8dDgYBvV:5%U9`wotEf">
+<mutation name="do something">
+<arg name="MotorPower"/>
+<arg name="MotorPower2"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="Ny0T}PU:Hd17=CWbER[B">
+<field name="NUM">1</field>
+</block>
+</value>
+<value name="ARG1">
+<block type="math_number" id="N@Y@;scITCg+fL$Y0if|">
+<field name="NUM">-1</field>
+</block>
+</value>
+</block>
+</statement>
+<statement name="ELSE">
+<block type="linearOpMode_sleep_Number" id="2?]ST.zyRdF+0GxQJ)8n">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="x*f@jxO/17=-71BfW9.r">
+<field name="NUM">100000</field>
+</shadow>
+</value>
+</block>
+</statement>
+</block>
+<block type="comment" id="Jh/;L$n@JuX8AQJDFCul" x="135" y="505">
 <field name="COMMENT">Put loop blocks here.</field>
 <next>
 <block type="telemetry_update" id="exvivmft-pX$n!1,8Ea$"/>
 </next>
 </block>
-</next>
+<block type="math_number" id="r4pCPcF^,j;T41kiQ4qr" x="1062" y="899">
+<field name="NUM">1</field>
 </block>
-</next>
+<block type="logic_compare" id="R|EVy_QM!uHt#w4~[o2(" x="1131" y="914">
+<field name="OP">LT</field>
+<value name="A">
+<block type="dcMotor_getProperty_Number" id="`s|.ZW4xoTD49x23%$j,">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"motor1"}</data>
 </block>
-</statement>
+</value>
+<value name="B">
+<block type="math_number" id="k:0em%ie/m)2`o?EE=U}">
+<field name="NUM">4590</field>
 </block>
-</next>
+</value>
 </block>
-</statement>
+<block type="math_number" id="wy;O415jlx2{h,@ugfC9" x="1187" y="932">
+<field name="NUM">1</field>
 </block>
-</next>
+<block type="logic_compare" id="MzJNn_Q/82)w/CYAqi@4" x="1159" y="970">
+<field name="OP">LT</field>
+<value name="A">
+<block type="dcMotor_getProperty_Number" id="O8PA~k:Hpp)fgKZ$Frd6">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"motor1"}</data>
 </block>
-</next>
+</value>
+<value name="B">
+<block type="math_number" id="bLQqH-[tai4viC)[Oe@w">
+<field name="NUM">4590</field>
 </block>
-</statement>
+</value>
+</block>
+<block type="math_number" id="uD9~938.4g!4K,pqL0{X" x="1215" y="988">
+<field name="NUM">1</field>
+</block>
+<block type="logic_compare" id="|1+C,mjM9z`aw3CS}Qe)" x="1187" y="1026">
+<field name="OP">LT</field>
+<value name="A">
+<block type="dcMotor_getProperty_Number" id="XsTM.G9AZzYWLxsGz6aA">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"motor1"}</data>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="F.PJ~w?!IOUJX+yNkFwb">
+<field name="NUM">4590</field>
+</block>
+</value>
+</block>
+<block type="math_number" id="~?yW$)knTwZ|k+m2dQ~N" x="1243" y="1044">
+<field name="NUM">1</field>
+</block>
+<block type="math_number" id="cv*i~(IJq`CGU$]j2VBV" x="1271" y="1100">
+<field name="NUM">1</field>
+</block>
+<block type="math_number" id="RG[Tz71MXz89y{|vZyoK" x="1299" y="1156">
+<field name="NUM">1</field>
+</block>
+<block type="math_number" id="/d[|C]rho@Rr%(vZq-:u" x="1327" y="1212">
+<field name="NUM">1</field>
 </block>
 </xml>
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
