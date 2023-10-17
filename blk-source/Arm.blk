@@ -1,8 +1,4 @@
 <xml xmlns="https://developers.google.com/blockly/xml">
-<variables>
-<variable id="(!#lY@5abRqeBSchB54[">MotorPower</variable>
-<variable id="H|]hJ4LT!MARLK@?t7cu">MotorPower2</variable>
-</variables>
 <block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="110" y="77">
 <field name="NAME">runOpMode</field>
 <comment pinned="false" h="45" w="532">This function is executed when this OpMode is selected from the Driver Station.</comment>
@@ -10,17 +6,37 @@
 <block type="comment" id="Lc#BFtj*NTB48YL;eBl.">
 <field name="COMMENT">Put initialization blocks here.</field>
 <next>
-<block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
+<block type="dcMotor_setProperty_RunMode" id="/LOExPAkndxg(?Ef#vvb">
+<field name="IDENTIFIER">motor5AsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"motor5"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="#[s,_e%}T$i*4O6gG{j.">
+<field name="RUN_MODE">STOP_AND_RESET_ENCODER</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="1X3Gp.[pg6tPf_A(KZeJ">
+<field name="IDENTIFIER">motor5AsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"motor5"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="Lww7!Q=y;TpZ.YqOf|B1">
+<field name="NUM">0</field>
+</shadow>
+</value>
 <next>
 <block type="dcMotor_setProperty_RunMode" id="au0$|s}Lz[V4e4[FOG,K">
-<field name="IDENTIFIER">motor4AsDcMotor</field>
+<field name="IDENTIFIER">motor5AsDcMotor</field>
 <field name="PROP">Mode</field>
-<data>{"IDENTIFIER":"motor4"}</data>
+<data>{"IDENTIFIER":"motor5"}</data>
 <value name="VALUE">
 <shadow type="dcMotor_typedEnum_runMode" id="JNUP|*rXfJTZ]0x[I`pI">
 <field name="RUN_MODE">RUN_TO_POSITION</field>
 </shadow>
 </value>
+<next>
+<block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
 <next>
 <block type="controls_whileUntil" id="}-)_l8q(Gw}vRsZ6Si$u">
 <field name="MODE">WHILE</field>
@@ -32,7 +48,7 @@
 <field name="COMMENT">Up and Down</field>
 <next>
 <block type="controls_if" id="p_,.zezs~Wbf;$Y0p!!U">
-<mutation elseif="1" else="1"/>
+<mutation elseif="1"/>
 <value name="IF0">
 <block type="gamepad_getProperty_Boolean" id="?{X$i]!TLH^R/#^PZE+o">
 <field name="IDENTIFIER">gamepad1</field>
@@ -41,25 +57,37 @@
 </block>
 </value>
 <statement name="DO0">
-<block type="dcMotor_setProperty_Number" id="KTPE5h9d;N]mUhfI:]72">
-<field name="IDENTIFIER">motor4AsDcMotor</field>
-<field name="PROP">Power</field>
-<data>{"IDENTIFIER":"motor4"}</data>
+<block type="dcMotor_setProperty_Number" id="OzF?A2;}}P$|o{uDqds4">
+<field name="IDENTIFIER">motor5AsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"motor5"}</data>
 <value name="VALUE">
-<shadow type="math_number" id="EUPnoOSvNHlZb$/xAV^b">
-<field name="NUM">0.5</field>
+<shadow type="math_number" id="X2ksx`RC,0|B0C.uvL5o">
+<field name="NUM">-650</field>
 </shadow>
 </value>
 <next>
-<block type="dcMotor_setProperty_Number" id="8)eQ4Y)qa:YcJz{Q=ofu">
-<field name="IDENTIFIER">motor4AsDcMotor</field>
-<field name="PROP">TargetPosition</field>
-<data>{"IDENTIFIER":"motor4"}</data>
+<block type="dcMotor_setProperty_RunMode" id="d7ho9rvdcXN#]j[?B5hR">
+<field name="IDENTIFIER">motor5AsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"motor5"}</data>
 <value name="VALUE">
-<shadow type="math_number" id="3`mjPcd}BcBG1.AND=lJ">
-<field name="NUM">1440</field>
+<shadow type="dcMotor_typedEnum_runMode" id="v*=9+R#%G55[mhA^;R8$">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
 </shadow>
 </value>
+<next>
+<block type="dcMotor_setProperty_Number" id="ob:CQugNI}eO|z]r2bTX">
+<field name="IDENTIFIER">motor5AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor5"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="lC=wo-4I|*.ym;(h0%cM">
+<field name="NUM">0.1</field>
+</shadow>
+</value>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -72,112 +100,41 @@
 </block>
 </value>
 <statement name="DO1">
-<block type="dcMotor_setProperty_Number" id="1.x1CkS7qLdiMYx1}f5e">
-<field name="IDENTIFIER">motor4AsDcMotor</field>
-<field name="PROP">Power</field>
-<data>{"IDENTIFIER":"motor4"}</data>
-<value name="VALUE">
-<shadow type="math_number" id="OVmGiolvan0Z;-7F@#IF">
-<field name="NUM">-0.5</field>
-</shadow>
-</value>
-<next>
 <block type="dcMotor_setProperty_Number" id="CIm2bXmbd=M[8S+W1w6r">
-<field name="IDENTIFIER">motor4AsDcMotor</field>
+<field name="IDENTIFIER">motor5AsDcMotor</field>
 <field name="PROP">TargetPosition</field>
-<data>{"IDENTIFIER":"motor4"}</data>
+<data>{"IDENTIFIER":"motor5"}</data>
 <value name="VALUE">
 <shadow type="math_number" id=",FGeyd}(rzM@6/E)GzoL">
-<field name="NUM">0</field>
+<field name="NUM">-30</field>
 </shadow>
 </value>
-</block>
-</next>
-</block>
-</statement>
-<statement name="ELSE">
-<block type="dcMotor_setProperty_Number" id="sRV,p^$fDd2-@iBQQ)MG">
-<field name="IDENTIFIER">motor4AsDcMotor</field>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="n9{O3+z3TE-uf)iR=KV-">
+<field name="IDENTIFIER">motor5AsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"motor5"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="*`Z:E]h3;:WU7#nq+rI^">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="-{tw=Daa9q/CN#ptSw+}">
+<field name="IDENTIFIER">motor5AsDcMotor</field>
 <field name="PROP">Power</field>
-<data>{"IDENTIFIER":"motor4"}</data>
+<data>{"IDENTIFIER":"motor5"}</data>
 <value name="VALUE">
-<shadow type="math_number" id="/4:hH{adnv]v5Ok1Fy_w">
-<field name="NUM">0</field>
-</shadow>
-</value>
-</block>
-</statement>
-<next>
-<block type="comment" id="|FYoInQHv{5K6++M8md[">
-<field name="COMMENT">claw servo</field>
-<next>
-<block type="controls_if" id="lq7`W^!R4$o+jgI/)7:W">
-<mutation elseif="1"/>
-<value name="IF0">
-<block type="gamepad_getProperty_Boolean" id=";9iJOKWZ`kiLSaQK{cLM">
-<field name="IDENTIFIER">gamepad1</field>
-<field name="PROP">X</field>
-<data>{"IDENTIFIER":"gamepad1"}</data>
-</block>
-</value>
-<statement name="DO0">
-<block type="servo_setProperty_Direction" id="bY:/?gWBp2)Ilt@bVWqq">
-<field name="IDENTIFIER">ClawServoAsServo</field>
-<field name="PROP">Direction</field>
-<data>{"IDENTIFIER":"ClawServo"}</data>
-<value name="VALUE">
-<shadow type="servo_typedEnum_direction" id="erf0ZBBa;FXFSIv~6!5w">
-<field name="DIRECTION">FORWARD</field>
-</shadow>
-</value>
-<next>
-<block type="servo_setProperty_Number" id=":l~%g`k]qRMl6ppF7it5">
-<field name="IDENTIFIER">ClawServoAsServo</field>
-<field name="PROP">Position</field>
-<data>{"IDENTIFIER":"ClawServo"}</data>
-<value name="VALUE">
-<shadow type="math_number" id="P;_^][2jeHc-S:_GsS09">
-<field name="NUM">1</field>
+<shadow type="math_number" id=")Fj:k#(TEyEZt9ZTS,72">
+<field name="NUM">0.1</field>
 </shadow>
 </value>
 </block>
 </next>
 </block>
-</statement>
-<value name="IF1">
-<block type="gamepad_getProperty_Boolean" id="^j4Y/Lhdf/{sdEgGG3.R">
-<field name="IDENTIFIER">gamepad1</field>
-<field name="PROP">B</field>
-<data>{"IDENTIFIER":"gamepad1"}</data>
-</block>
-</value>
-<statement name="DO1">
-<block type="servo_setProperty_Direction" id="8$$Mw83Dys(]hb(w7sAB">
-<field name="IDENTIFIER">ClawServoAsServo</field>
-<field name="PROP">Direction</field>
-<data>{"IDENTIFIER":"ClawServo"}</data>
-<value name="VALUE">
-<shadow type="servo_typedEnum_direction" id="TCc@J5`V[i?|lXD,By((">
-<field name="DIRECTION">REVERSE</field>
-</shadow>
-</value>
-<next>
-<block type="servo_setProperty_Number" id="|8]gy/J;:ewq_^(_8!_u">
-<field name="IDENTIFIER">ClawServoAsServo</field>
-<field name="PROP">Position</field>
-<data>{"IDENTIFIER":"ClawServo"}</data>
-<value name="VALUE">
-<shadow type="math_number" id="uZS?iKuHZV!1TpdH5rHN">
-<field name="NUM">1</field>
-</shadow>
-</value>
-</block>
 </next>
 </block>
 </statement>
-<next>
-<block type="comment" id="ZyEU}uk2$4-[P(D=sG_v">
-<field name="COMMENT">Put loop blocks here.</field>
 <next>
 <block type="linearOpMode_sleep_Number" id="NOSL56yv*;n)`$pv;vpa">
 <value name="MILLISECONDS">
@@ -185,10 +142,9 @@
 <field name="NUM">50</field>
 </shadow>
 </value>
-</block>
-</next>
-</block>
-</next>
+<next>
+<block type="comment" id="|FYoInQHv{5K6++M8md[">
+<field name="COMMENT">funny claw sideways movement</field>
 </block>
 </next>
 </block>
@@ -197,6 +153,10 @@
 </next>
 </block>
 </statement>
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -218,31 +178,145 @@
 </shadow>
 </value>
 </block>
-<block type="dcMotor_setProperty_Number" id="g*3F/`$x?er,nP|OfR5)" x="598" y="207">
-<field name="IDENTIFIER">motor1AsDcMotor</field>
-<field name="PROP">Power</field>
-<data>{"IDENTIFIER":"motor1"}</data>
-<value name="VALUE">
-<shadow type="math_number">
-<field name="NUM">1</field>
-</shadow>
-<block type="variables_get" id="VRXc1cFnDE4oU9Vc(+BV">
-<field name="VAR" id="(!#lY@5abRqeBSchB54[">MotorPower</field>
+<block type="controls_if" id="lq7`W^!R4$o+jgI/)7:W" x="475" y="610">
+<mutation elseif="1"/>
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id=";9iJOKWZ`kiLSaQK{cLM">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">X</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
 </block>
+</value>
+<statement name="DO0">
+<block type="servo_setProperty_Direction" id="bY:/?gWBp2)Ilt@bVWqq">
+<field name="IDENTIFIER">ClawServoAsServo</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"ClawServo","block_warning_hidden":true}</data>
+<value name="VALUE">
+<shadow type="servo_typedEnum_direction" id="erf0ZBBa;FXFSIv~6!5w">
+<field name="DIRECTION">FORWARD</field>
+</shadow>
 </value>
 <next>
-<block type="dcMotor_setProperty_Number" id="Q8FkMCR{l6orPqVb_!XP">
-<field name="IDENTIFIER">motor2AsDcMotor</field>
-<field name="PROP">Power</field>
-<data>{"IDENTIFIER":"motor2"}</data>
+<block type="servo_setProperty_Number" id=":l~%g`k]qRMl6ppF7it5">
+<field name="IDENTIFIER">ClawServoAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"ClawServo","block_warning_hidden":true}</data>
 <value name="VALUE">
-<shadow type="math_number">
+<shadow type="math_number" id="P;_^][2jeHc-S:_GsS09">
 <field name="NUM">1</field>
 </shadow>
-<block type="variables_get" id="[5mlp_qUb-3A:L/aE?Og">
-<field name="VAR" id="H|]hJ4LT!MARLK@?t7cu">MotorPower2</field>
+</value>
+</block>
+</next>
+</block>
+</statement>
+<value name="IF1">
+<block type="gamepad_getProperty_Boolean" id="^j4Y/Lhdf/{sdEgGG3.R">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">B</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
 </block>
 </value>
+<statement name="DO1">
+<block type="servo_setProperty_Direction" id="8$$Mw83Dys(]hb(w7sAB">
+<field name="IDENTIFIER">ClawServoAsServo</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"ClawServo","block_warning_hidden":true}</data>
+<value name="VALUE">
+<shadow type="servo_typedEnum_direction" id="TCc@J5`V[i?|lXD,By((">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="servo_setProperty_Number" id="|8]gy/J;:ewq_^(_8!_u">
+<field name="IDENTIFIER">ClawServoAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"ClawServo","block_warning_hidden":true}</data>
+<value name="VALUE">
+<shadow type="math_number" id="uZS?iKuHZV!1TpdH5rHN">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="comment" id="Gm-w{eKlIj@1{/!pYF;t">
+<field name="COMMENT">claw open close</field>
+<next>
+<block type="controls_if" id="AgAwZ)F3abC41[.psi8%">
+<mutation elseif="1"/>
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="A9?;85cH1BFJxJ@0?o,p">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightBumper</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="servo_setProperty_Direction" id="22cDis1^4sN%l76fjKUa">
+<field name="IDENTIFIER">ClawServoAsServo</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"ClawServo","block_warning_hidden":true}</data>
+<value name="VALUE">
+<shadow type="servo_typedEnum_direction" id="yzl*bCmo?s822a)A}?tr">
+<field name="DIRECTION">FORWARD</field>
+</shadow>
+</value>
+<next>
+<block type="servo_setProperty_Number" id="$**E9[zrdKC1hA`=?8-8">
+<field name="IDENTIFIER">ClawServoAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"ClawServo","block_warning_hidden":true}</data>
+<value name="VALUE">
+<shadow type="math_number" id="{X:Lag/j55KP~KXyqy|)">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</statement>
+<value name="IF1">
+<block type="gamepad_getProperty_Boolean" id="PcCsD:],U6(iS05%,#%)">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftBumper</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO1">
+<block type="servo_setProperty_Direction" id="YVi*/5A-nbj{,WjfbrA8">
+<field name="IDENTIFIER">ClawServoAsServo</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"ClawServo","block_warning_hidden":true}</data>
+<value name="VALUE">
+<shadow type="servo_typedEnum_direction" id="!O_p1bokpd_8-kVv+n~b">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="servo_setProperty_Number" id="U1fR?Sq!X.fAo!CvcT_^">
+<field name="IDENTIFIER">ClawServoAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"ClawServo","block_warning_hidden":true}</data>
+<value name="VALUE">
+<shadow type="math_number" id="rl[oxsIZ1zj;1}h_F]}5">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="comment" id="ZyEU}uk2$4-[P(D=sG_v">
+<field name="COMMENT">Put loop blocks here.</field>
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>
