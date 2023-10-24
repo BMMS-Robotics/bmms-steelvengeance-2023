@@ -9,7 +9,7 @@
 <block type="dcMotor_setProperty_RunMode" id="/LOExPAkndxg(?Ef#vvb">
 <field name="IDENTIFIER">motor5AsDcMotor</field>
 <field name="PROP">Mode</field>
-<data>{"IDENTIFIER":"motor5"}</data>
+<data>{"IDENTIFIER":"motor5","block_warning_hidden":true}</data>
 <value name="VALUE">
 <shadow type="dcMotor_typedEnum_runMode" id="#[s,_e%}T$i*4O6gG{j.">
 <field name="RUN_MODE">STOP_AND_RESET_ENCODER</field>
@@ -19,7 +19,7 @@
 <block type="dcMotor_setProperty_Number" id="1X3Gp.[pg6tPf_A(KZeJ">
 <field name="IDENTIFIER">motor5AsDcMotor</field>
 <field name="PROP">TargetPosition</field>
-<data>{"IDENTIFIER":"motor5"}</data>
+<data>{"IDENTIFIER":"motor5","block_warning_hidden":true}</data>
 <value name="VALUE">
 <shadow type="math_number" id="Lww7!Q=y;TpZ.YqOf|B1">
 <field name="NUM">0</field>
@@ -29,7 +29,7 @@
 <block type="dcMotor_setProperty_RunMode" id="au0$|s}Lz[V4e4[FOG,K">
 <field name="IDENTIFIER">motor5AsDcMotor</field>
 <field name="PROP">Mode</field>
-<data>{"IDENTIFIER":"motor5"}</data>
+<data>{"IDENTIFIER":"motor5","block_warning_hidden":true}</data>
 <value name="VALUE">
 <shadow type="dcMotor_typedEnum_runMode" id="JNUP|*rXfJTZ]0x[I`pI">
 <field name="RUN_MODE">RUN_TO_POSITION</field>
@@ -60,7 +60,7 @@
 <block type="dcMotor_setProperty_Number" id="OzF?A2;}}P$|o{uDqds4">
 <field name="IDENTIFIER">motor5AsDcMotor</field>
 <field name="PROP">TargetPosition</field>
-<data>{"IDENTIFIER":"motor5"}</data>
+<data>{"IDENTIFIER":"motor5","block_warning_hidden":true}</data>
 <value name="VALUE">
 <shadow type="math_number" id="X2ksx`RC,0|B0C.uvL5o">
 <field name="NUM">-650</field>
@@ -70,7 +70,7 @@
 <block type="dcMotor_setProperty_RunMode" id="d7ho9rvdcXN#]j[?B5hR">
 <field name="IDENTIFIER">motor5AsDcMotor</field>
 <field name="PROP">Mode</field>
-<data>{"IDENTIFIER":"motor5"}</data>
+<data>{"IDENTIFIER":"motor5","block_warning_hidden":true}</data>
 <value name="VALUE">
 <shadow type="dcMotor_typedEnum_runMode" id="v*=9+R#%G55[mhA^;R8$">
 <field name="RUN_MODE">RUN_TO_POSITION</field>
@@ -80,7 +80,7 @@
 <block type="dcMotor_setProperty_Number" id="ob:CQugNI}eO|z]r2bTX">
 <field name="IDENTIFIER">motor5AsDcMotor</field>
 <field name="PROP">Power</field>
-<data>{"IDENTIFIER":"motor5"}</data>
+<data>{"IDENTIFIER":"motor5","block_warning_hidden":true}</data>
 <value name="VALUE">
 <shadow type="math_number" id="lC=wo-4I|*.ym;(h0%cM">
 <field name="NUM">0.1</field>
@@ -103,7 +103,7 @@
 <block type="dcMotor_setProperty_Number" id="CIm2bXmbd=M[8S+W1w6r">
 <field name="IDENTIFIER">motor5AsDcMotor</field>
 <field name="PROP">TargetPosition</field>
-<data>{"IDENTIFIER":"motor5"}</data>
+<data>{"IDENTIFIER":"motor5","block_warning_hidden":true}</data>
 <value name="VALUE">
 <shadow type="math_number" id=",FGeyd}(rzM@6/E)GzoL">
 <field name="NUM">-30</field>
@@ -113,7 +113,7 @@
 <block type="dcMotor_setProperty_RunMode" id="n9{O3+z3TE-uf)iR=KV-">
 <field name="IDENTIFIER">motor5AsDcMotor</field>
 <field name="PROP">Mode</field>
-<data>{"IDENTIFIER":"motor5"}</data>
+<data>{"IDENTIFIER":"motor5","block_warning_hidden":true}</data>
 <value name="VALUE">
 <shadow type="dcMotor_typedEnum_runMode" id="*`Z:E]h3;:WU7#nq+rI^">
 <field name="RUN_MODE">RUN_TO_POSITION</field>
@@ -123,7 +123,7 @@
 <block type="dcMotor_setProperty_Number" id="-{tw=Daa9q/CN#ptSw+}">
 <field name="IDENTIFIER">motor5AsDcMotor</field>
 <field name="PROP">Power</field>
-<data>{"IDENTIFIER":"motor5"}</data>
+<data>{"IDENTIFIER":"motor5","block_warning_hidden":true}</data>
 <value name="VALUE">
 <shadow type="math_number" id=")Fj:k#(TEyEZt9ZTS,72">
 <field name="NUM">0.1</field>
@@ -320,9 +320,4 @@
 </block>
 </next>
 </block>
-</xml>
-<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
-<Extra>
-<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
-<Enabled value="true" />
-</Extra>
+</xml><?xml version='1.0' encoding='UTF-8' standalone='yes' ?><Extra><OpModeMeta flavor="TELEOP" group="" /><Enabled value="false" /></Extra>
