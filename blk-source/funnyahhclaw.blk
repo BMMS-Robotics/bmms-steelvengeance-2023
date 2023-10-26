@@ -149,7 +149,7 @@
 <block type="servo_setProperty_Direction" id="m]^B{NCh4l+um`C(7atl">
 <field name="IDENTIFIER">ClawServoAsServo</field>
 <field name="PROP">Direction</field>
-<data>{"IDENTIFIER":"favoriteservo","block_warning_hidden":true}</data>
+<data>{"IDENTIFIER":"ClawServo","block_warning_hidden":true}</data>
 <value name="VALUE">
 <shadow type="servo_typedEnum_direction" id="j4{Z(AnA.,oEJ,cEsp:0">
 <field name="DIRECTION">REVERSE</field>
@@ -159,7 +159,7 @@
 <block type="servo_setProperty_Number" id="@)0i[3k!6*ctboDl[?F#">
 <field name="IDENTIFIER">ClawServoAsServo</field>
 <field name="PROP">Position</field>
-<data>{"IDENTIFIER":"favoriteservo","block_warning_hidden":true}</data>
+<data>{"IDENTIFIER":"ClawServo","block_warning_hidden":true}</data>
 <value name="VALUE">
 <shadow type="math_number" id="VLi;aPQ0aGp:*27T(*Xl">
 <field name="NUM">1</field>
@@ -192,4 +192,9 @@
 </block>
 </statement>
 </block>
-</xml><?xml version='1.0' encoding='UTF-8' standalone='yes' ?><Extra><OpModeMeta flavor="TELEOP" group="" /><Enabled value="false" /></Extra>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<Enabled value="true" />
+</Extra>
