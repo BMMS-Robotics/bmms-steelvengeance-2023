@@ -196,6 +196,26 @@
 <next>
 <block type="telemetry_update" id="xC_3+|a!f3QdmDRWL)`F">
 <next>
+<block type="dcMotor_setProperty_RunMode" id="et~;d]IUwY~OkO(4o`EU">
+<field name="IDENTIFIER">ArmMotorAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"ArmMotor"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="#K|e)66gjn;:MBE}^B+4">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="uQ=TbwGDi9BU$uq)6yt,">
+<field name="IDENTIFIER">ArmMotorAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"ArmMotor"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="9u*@kQdFouSzx@#j+l%)">
+<field name="NUM">660</field>
+</shadow>
+</value>
+<next>
 <block type="linearOpMode_sleep_Number" id="mc{:KDE-8z,Dh},fl`$3">
 <value name="MILLISECONDS">
 <shadow type="math_number" id="fMNW-*Bln)hk!#wU74*0">
@@ -295,13 +315,13 @@
 </shadow>
 </value>
 <next>
-<block type="procedures_callnoreturn" id="Ee*.p:nNg|}f#p^^~pnY">
-<mutation name="Turn right">
+<block type="procedures_callnoreturn" id="A=A/{LsGAF^@_|Srb:]g">
+<mutation name="Turn Left">
 <arg name="end position"/>
 </mutation>
 <value name="ARG0">
 <block type="math_number" id=".-MlLO~Bn7Xkp}4il77w">
-<field name="NUM">1920</field>
+<field name="NUM">-1320</field>
 </block>
 </value>
 <next>
@@ -347,7 +367,7 @@
 </mutation>
 <value name="ARG0">
 <block type="math_number" id="BbuNo.UH:eKxUn[iLf$e">
-<field name="NUM">9320</field>
+<field name="NUM">6680</field>
 </block>
 </value>
 <next>
@@ -379,6 +399,10 @@
 <next>
 <block type="comment" id="(rU-p_T_/B|vExcs}liL">
 <field name="COMMENT">Put run blocks here.</field>
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>

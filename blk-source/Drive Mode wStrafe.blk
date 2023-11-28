@@ -50,102 +50,29 @@
 <block type="linearOpMode_opModeIsActive" id="e)cr{!2VIET83s,JWC.="/>
 </value>
 <statement name="DO">
-<block type="controls_if" id="`iq8kEk=xwZ8xRqnn%in">
-<mutation else="1"/>
-<value name="IF0">
-<block type="gamepad_getProperty_Boolean" id="`LBAD1F{sK[c$ES2}`q)">
+<block type="variables_set" id="vfR1i*4]+eJ)VWME/9r3">
+<field name="VAR" id="pkHo[SB0(muh+r.08=oI">MotorPower1</field>
+<value name="VALUE">
+<block type="gamepad_getProperty_Number" id="l=u82P[g(_:n5ax@^O.q">
 <field name="IDENTIFIER">gamepad1</field>
-<field name="PROP">RightStickButton</field>
+<field name="PROP">RightStickY</field>
 <data>{"IDENTIFIER":"gamepad1"}</data>
 </block>
 </value>
-<statement name="DO0">
-<block type="dcMotor_setProperty_Number" id="hb(7-Kr{uq:(=t/[@Ko[">
-<field name="IDENTIFIER">motor1AsDcMotor</field>
-<field name="PROP">Power</field>
-<data>{"IDENTIFIER":"motor1"}</data>
+<next>
+<block type="variables_set" id="9WSG1TbNg+nT[.exu#}@">
+<field name="VAR" id="7dTR4u8uCI}L6Y$b-grS">MotorPower2</field>
 <value name="VALUE">
-<shadow type="math_number">
-<field name="NUM">1</field>
-</shadow>
-<block type="math_arithmetic" id="s+PEeY1tB[13@3a$;n9J">
-<field name="OP">MULTIPLY</field>
-<value name="A">
-<shadow type="math_number">
-<field name="NUM">1</field>
-</shadow>
-<block type="variables_get" id="IrMiparce$Dz4!phJZHP">
-<field name="VAR" id="(!#lY@5abRqeBSchB54[">MotorPower3</field>
-</block>
-</value>
-<value name="B">
-<shadow type="math_number" id="3O`R^xIJ8a=fz5mAy5Cx">
-<field name="NUM">-1</field>
-</shadow>
-</value>
+<block type="gamepad_getProperty_Number" id="0(l/i864kw++.C5,`s[O">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickY</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
 </block>
 </value>
 <next>
-<block type="dcMotor_setProperty_Number" id="Q/]{1H-iF(bPaL#vWtuI">
-<field name="IDENTIFIER">motor3AsDcMotor</field>
-<field name="PROP">Power</field>
-<data>{"IDENTIFIER":"motor3"}</data>
-<value name="VALUE">
-<shadow type="math_number">
-<field name="NUM">1</field>
-</shadow>
-<block type="math_arithmetic" id="b}^W5(vqU?zx-B;$Y~G{">
-<field name="OP">MULTIPLY</field>
-<value name="A">
-<shadow type="math_number">
-<field name="NUM">1</field>
-</shadow>
-<block type="variables_get" id="y+mWg%74au**3GB73X0[">
-<field name="VAR" id="(!#lY@5abRqeBSchB54[">MotorPower3</field>
-</block>
-</value>
-<value name="B">
-<shadow type="math_number" id="f=u!o+h;g=|kYF?WjL2N">
-<field name="NUM">-1</field>
-</shadow>
-</value>
-</block>
-</value>
+<block type="comment" id="$k;sh:#6M[v+SRm;W93X">
+<field name="COMMENT">Forwards/Backward</field>
 <next>
-<block type="dcMotor_setProperty_Number" id="K$l)qDx-@.lH1s1e?kp1">
-<field name="IDENTIFIER">motor2AsDcMotor</field>
-<field name="PROP">Power</field>
-<data>{"IDENTIFIER":"motor2"}</data>
-<value name="VALUE">
-<shadow type="math_number">
-<field name="NUM">1</field>
-</shadow>
-<block type="variables_get" id="ijoxyopnLg=RZg)E~@Zc">
-<field name="VAR" id="(!#lY@5abRqeBSchB54[">MotorPower3</field>
-</block>
-</value>
-<next>
-<block type="dcMotor_setProperty_Number" id="m*.{f9i?#},+Tm||_+iU">
-<field name="IDENTIFIER">motor4AsDcMotor</field>
-<field name="PROP">Power</field>
-<data>{"IDENTIFIER":"motor4"}</data>
-<value name="VALUE">
-<shadow type="math_number">
-<field name="NUM">1</field>
-</shadow>
-<block type="variables_get" id="JLV5djeTa4$X0621{V0Y">
-<field name="VAR" id="(!#lY@5abRqeBSchB54[">MotorPower3</field>
-</block>
-</value>
-</block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</statement>
-<statement name="ELSE">
 <block type="dcMotor_setProperty_Number" id="HOXkvb|_D2S@*m0fu?ui">
 <field name="IDENTIFIER">motor1AsDcMotor</field>
 <field name="PROP">Power</field>
@@ -223,6 +150,59 @@
 <field name="VAR" id="7dTR4u8uCI}L6Y$b-grS">MotorPower2</field>
 </block>
 </value>
+<next>
+<block type="comment" id="]yn:vk]Q@[`iOC%TL?r_">
+<field name="COMMENT">use bumpers to strafe</field>
+<next>
+<block type="controls_if" id="ktp%r89kXjBap5]|,J!{">
+<mutation elseif="1" else="1"/>
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id=";+_h^]d$}G=*%}*L.]3w">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightBumper</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="dcMotor_setProperty_Number" id="6*uPiCrq!lmpN?{zYZzG">
+<field name="IDENTIFIER">motor4AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor4"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="EVa6TX~7IIkY@SFhCwDY">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="TiA~I4J;UYHUl`A/zJ.!">
+<field name="IDENTIFIER">motor2AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor2"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="s:0L/.m;B+Cv@,hOw4I-">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="Y/Pi4)[2dQIR/=@Q`b=h">
+<field name="IDENTIFIER">motor3AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor3"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="G7_k5=`p{KS7vTg8=E~=">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="sUu|hQFdjpGsRtI_Lx^Y">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor1"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="3^PR/eXHZ2Me+!LznrJc">
+<field name="NUM">-1</field>
+</shadow>
+</value>
 </block>
 </next>
 </block>
@@ -231,39 +211,109 @@
 </next>
 </block>
 </statement>
-<next>
-<block type="variables_set" id="vfR1i*4]+eJ)VWME/9r3">
-<field name="VAR" id="pkHo[SB0(muh+r.08=oI">MotorPower1</field>
-<value name="VALUE">
-<block type="gamepad_getProperty_Number" id="l=u82P[g(_:n5ax@^O.q">
+<value name="IF1">
+<block type="gamepad_getProperty_Boolean" id="k3%vkXOeOP7#T/jd;/PD">
 <field name="IDENTIFIER">gamepad1</field>
-<field name="PROP">RightStickY</field>
+<field name="PROP">LeftBumper</field>
 <data>{"IDENTIFIER":"gamepad1"}</data>
 </block>
 </value>
-<next>
-<block type="variables_set" id="9WSG1TbNg+nT[.exu#}@">
-<field name="VAR" id="7dTR4u8uCI}L6Y$b-grS">MotorPower2</field>
+<statement name="DO1">
+<block type="dcMotor_setProperty_Number" id="K{Lt{PF39%eIf^{ygm3^">
+<field name="IDENTIFIER">motor4AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor4"}</data>
 <value name="VALUE">
-<block type="gamepad_getProperty_Number" id="0(l/i864kw++.C5,`s[O">
-<field name="IDENTIFIER">gamepad1</field>
-<field name="PROP">LeftStickY</field>
-<data>{"IDENTIFIER":"gamepad1"}</data>
-</block>
+<shadow type="math_number" id="E`=%E5ez38s/BqXTN+*j">
+<field name="NUM">-1</field>
+</shadow>
 </value>
 <next>
-<block type="variables_set" id="lZ1oD65rN/%EDO*r]*rd">
-<field name="VAR" id="(!#lY@5abRqeBSchB54[">MotorPower3</field>
+<block type="dcMotor_setProperty_Number" id="}W8thVm2Kh{a.PK0BC|h">
+<field name="IDENTIFIER">motor2AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor2"}</data>
 <value name="VALUE">
-<block type="gamepad_getProperty_Number" id=",xYRE~1(2uG3wO{R#n]{">
-<field name="IDENTIFIER">gamepad1</field>
-<field name="PROP">RightStickX</field>
-<data>{"IDENTIFIER":"gamepad1"}</data>
-</block>
+<shadow type="math_number" id="RMC$WdAcENP^bYqoIP)[">
+<field name="NUM">-1</field>
+</shadow>
 </value>
 <next>
-<block type="comment" id="$k;sh:#6M[v+SRm;W93X">
-<field name="COMMENT">Forwards/Backward</field>
+<block type="dcMotor_setProperty_Number" id=")9h.3L#_tvO@yDZ9Vj+#">
+<field name="IDENTIFIER">motor3AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor3"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="U{C%t_N/gpYg~4+5D@:}">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="wZhBudqk?!@-S^v!RJq+">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor1"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="V-a]-ke4kGPrcC:klD+B">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+<statement name="ELSE">
+<block type="dcMotor_setProperty_Number" id="Cold/AUZL+3wD7Usjt0w">
+<field name="IDENTIFIER">motor4AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor4"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="moGrPtVeLTXRi]@Q=3J3">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="YCDgbbsj`-:nD~ZC8ov#">
+<field name="IDENTIFIER">motor2AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor2"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="9zFz|h^(Tp)^Y,OHXo?Q">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="v=UmI~gS`b[$96/etXj8">
+<field name="IDENTIFIER">motor3AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor3"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="[:kKM$u4sT+SN2fKNMUy">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="=NY7%3GETKtjYd7To.8)">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor1"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="+!g?b%iy1J~/#6wT$U~g">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
 <next>
 <block type="comment" id="U2-9:-_s3V4gXNi@yZ5Q">
 <field name="COMMENT">claw</field>
@@ -558,6 +608,14 @@
 </block>
 </next>
 </block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
 </statement>
 </block>
 </next>
@@ -576,17 +634,7 @@
 </block>
 </value>
 <next>
-<block type="variables_set" id="vA,m5r]q[`|n%%tlNfbE">
-<field name="VAR" id="H|]hJ4LT!MARLK@?t7cu">MotorPower4</field>
-<value name="VALUE">
-<block type="math_number" id="D!i%M#/kCyP`bTIfZkrO">
-<field name="NUM">0</field>
-</block>
-</value>
-</block>
-</next>
-</block>
-<block type="variables_set" id="1g{.=mP,v|)SDf*IaTl(" x="426" y="470">
+<block type="variables_set" id="1g{.=mP,v|)SDf*IaTl(">
 <field name="VAR" id="(!#lY@5abRqeBSchB54[">MotorPower3</field>
 <value name="VALUE">
 <block type="math_number" id="5u0eEw=Z$~]5(Ai]y#mv">
@@ -601,10 +649,22 @@
 <field name="NUM">1</field>
 </block>
 </value>
+<next>
+<block type="variables_set" id="vA,m5r]q[`|n%%tlNfbE">
+<field name="VAR" id="H|]hJ4LT!MARLK@?t7cu">MotorPower4</field>
+<value name="VALUE">
+<block type="math_number" id="D!i%M#/kCyP`bTIfZkrO">
+<field name="NUM">0</field>
+</block>
+</value>
 </block>
 </next>
 </block>
-<block type="dcMotor_setProperty_Number" id="5MTg|FWv+mGD]:_A6GmZ" x="-5" y="548">
+</next>
+</block>
+</next>
+</block>
+<block type="dcMotor_setProperty_Number" id="5MTg|FWv+mGD]:_A6GmZ" x="295" y="646">
 <field name="IDENTIFIER">motor3AsDcMotor</field>
 <field name="PROP">Power</field>
 <data>{"IDENTIFIER":"motor3"}</data>
