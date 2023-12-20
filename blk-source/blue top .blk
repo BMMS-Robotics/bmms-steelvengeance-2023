@@ -171,7 +171,7 @@
 <block type="linearOpMode_sleep_Number" id="$*scROGZtz`Ebj!y%F6?">
 <value name="MILLISECONDS">
 <shadow type="math_number" id="yFEO/IW++sl,;%S`;gGk">
-<field name="NUM">10000</field>
+<field name="NUM">1000</field>
 </shadow>
 </value>
 <next>
@@ -458,7 +458,7 @@
 <data>{"IDENTIFIER":"motor1"}</data>
 <value name="VALUE">
 <shadow type="math_number" id="!v^D*Aq#JN+$U-*k6}=1">
-<field name="NUM">16301</field>
+<field name="NUM">10224</field>
 </shadow>
 </value>
 <next>
@@ -468,7 +468,7 @@
 <data>{"IDENTIFIER":"motor2"}</data>
 <value name="VALUE">
 <shadow type="math_number" id="EGpSYCbB7p7[V]M73f#O">
-<field name="NUM">16301</field>
+<field name="NUM">10224</field>
 </shadow>
 </value>
 <next>
@@ -478,7 +478,7 @@
 <data>{"IDENTIFIER":"motor3"}</data>
 <value name="VALUE">
 <shadow type="math_number" id="S8N,OaaV[xS_gFYnoM1s">
-<field name="NUM">-11201</field>
+<field name="NUM">-4904</field>
 </shadow>
 </value>
 <next>
@@ -488,7 +488,7 @@
 <data>{"IDENTIFIER":"motor4"}</data>
 <value name="VALUE">
 <shadow type="math_number" id="Wxq}!SH8!E1G,?E=6vt~">
-<field name="NUM">-11201</field>
+<field name="NUM">-4904</field>
 </shadow>
 </value>
 <next>
@@ -605,7 +605,7 @@
 <data>{"IDENTIFIER":"ArmMotor"}</data>
 <value name="VALUE">
 <shadow type="math_number" id="yu]uVe_Y!xLChJjO6~-Q">
-<field name="NUM">-570</field>
+<field name="NUM">-870</field>
 </shadow>
 </value>
 <next>
@@ -625,7 +625,7 @@
 <data>{"IDENTIFIER":"ArmMotor"}</data>
 <value name="VALUE">
 <shadow type="math_number" id="j@K#+jFb%,xq5l-dfOsM">
-<field name="NUM">-1</field>
+<field name="NUM">-0.4</field>
 </shadow>
 </value>
 <next>
@@ -663,11 +663,317 @@
 </shadow>
 </value>
 <next>
+<block type="dcMotor_setProperty_Number" id="AU59EK44~92ppLD?I}n7">
+<field name="IDENTIFIER">motor2AsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"motor2"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="y[_zt|n~rztbI+jYGN?.">
+<field name="NUM">13367</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="uqe^X3M-CmN1mp0`8+0c">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"motor1"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="RbJssLcBn^8(1H2ZFBo;">
+<field name="NUM">7081</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="yFm@pL[d5uK~Sy[6A9R1">
+<field name="IDENTIFIER">motor3AsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"motor3"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="{:PRMag|!Qhi`|!K#O_S">
+<field name="NUM">-1761</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="Lu+@,78+3A!{QLsGtK.s">
+<field name="IDENTIFIER">motor4AsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"motor4"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="gC9z0*23_ZoQ1=8!EM4@">
+<field name="NUM">-8047</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="b9wuLZ*+t]~u[Eyc$dZm">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"motor1"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="CB){0F`sPLz4eD)QqfW%">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_RunMode" id=")6b97y6`n(;u?8c*(+bm">
+<field name="IDENTIFIER">motor2AsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"motor2"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="h(DX):?AN(Bwn}o^akTQ">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="oOi=xfR05$JO`McE!sz#">
+<field name="IDENTIFIER">motor3AsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"motor3"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="h36IQf^1+]Y(_+I0D8/k">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="q{f]Y35{yKg8det|Nqg+">
+<field name="IDENTIFIER">motor4AsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"motor4"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="vpPK,9v;*^)t$iy8Le@A">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="S4~d*[7g#335^i^-w:XF">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor1"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="Wq0c0V=FFd-]EsO?@8;U">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="t}M|%[uPn!0CeZWBMb:~">
+<field name="IDENTIFIER">motor2AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor2"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="f(QfkyI8/H)fuI!5EIE0">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="}UETf5-E0X(;r5uTm;sG">
+<field name="IDENTIFIER">motor4AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor4"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="m1u_M:znc5Op!gvO.X0o">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="0?pi:JK8j(}*(RQ-)NIq">
+<field name="IDENTIFIER">motor3AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor3"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="w2-dYJ8lY0cqAUG/@X|%">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<next>
+<block type="linearOpMode_sleep_Number" id="jh#BIb,D#*ckPOiAma|x">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="7;f^76m**M*9z/[6K0Ie">
+<field name="NUM">3000</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="$|@Vp[N#71jLn=iqRq0B">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"motor1"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="NKuS=t:~(/1Mb6K-S=f*">
+<field name="NUM">9962</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="Y-,;oS@q7KoW=38NLyk=">
+<field name="IDENTIFIER">motor2AsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"motor2"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="Ljx+mDP5pC_0UKU1hARj">
+<field name="NUM">16248</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="ep3Kd93^2k#V60_!u@p1">
+<field name="IDENTIFIER">motor3AsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"motor3"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="lQOt)[EZ;v.w1cw=h;r8">
+<field name="NUM">-4642</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="x*W~Ezlm1#EC7kiO,%C0">
+<field name="IDENTIFIER">motor4AsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"motor4"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="(U^^B{^{py;#3TRiQ|$`">
+<field name="NUM">-10928</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="5iB[{/%w!Aof{P}EIyHY">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"motor1"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="v`UqH*Fi9jRVCT^q=H`y">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="obA*31hHsCxu{kMf1%FB">
+<field name="IDENTIFIER">motor2AsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"motor2"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="n%a9Vl~MYFI3sWr-iTc-">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="$J-1WS3Wr%p{7JpH_h}w">
+<field name="IDENTIFIER">motor3AsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"motor3"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="TJ(MFN=bKmqG0N?V-Ml;">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="[y=MW[b9ULx.U@bhId(b">
+<field name="IDENTIFIER">motor4AsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"motor4"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="Dns^caS:=w[T786PB[vm">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="[+r5;0yf5K)=/rB/6zop">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor1"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="VHYo,w~GJ[k[st4c(L%b">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="w,y(,$E~~_H19D/Nb|ff">
+<field name="IDENTIFIER">motor2AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor2"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="*a{(VE}V8H*NKu2|ib^*">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="Y]Hi-FNe(qU*hUuxxpEH">
+<field name="IDENTIFIER">motor3AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor3"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="6NBT;w!e115=y1kQqa.Q">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id=":On8G|@@mh,lF5La=KFG">
+<field name="IDENTIFIER">motor4AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor4"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="Q1A./T8zS}iuL0=H6*qA">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+<next>
+<block type="telemetry_addLine" id="]=EGR(Sb}f26{I_)a*/.">
+<value name="TEXT">
+<shadow type="text" id="QMjF,LNmDd{iV%FAYsl^">
+<field name="TEXT">after forward</field>
+</shadow>
+</value>
+<next>
 <block type="comment" id="(rU-p_T_/B|vExcs}liL">
 <field name="COMMENT">Put run blocks here.</field>
 <next>
 <block type="comment" id="Yf*OFEFO%gk=j$$eR`R=">
 <field name="COMMENT">open claw</field>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>
